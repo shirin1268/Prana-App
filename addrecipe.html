@@ -1,0 +1,61 @@
+<!--
+  Generated template for the AddrecipePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Addrecipe</ion-title>
+  </ion-navbar>
+  <ion-searchbar icon-left="search" (ionInput)="getItems($event)">
+  </ion-searchbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list *ngFor="let recipe of recipesSearch">
+    <ion-card >
+    <ion-item>
+      <ion-label required="*">Title</ion-label>
+      <ion-textarea type="text" placeholder="Title" [(ngModel)]="titleProp"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-textarea type="text" placeholder="Category" [(ngModel)]="categoryProp"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label required="*">Avatar</ion-label>
+      <ion-input type="text" placeholder="Flag of your country" [(ngModel)]="avatarUrlProp"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ingredients</ion-label>
+      <ion-textarea type="text" placeholder="Ingredients" [(ngModel)]="ingredientsProp"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label required="*">Description</ion-label>
+      <ion-textarea type="text" placeholder="Description" [(ngModel)]="descriptionProp"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label required="*">Add photo of the food</ion-label>
+
+      <ion-input icon name="camera" placeholder="image of the food" [(ngModel)]="imgUrlProp"></ion-input>
+    </ion-item>
+    </ion-card>
+
+  </ion-list>
+
+  <button ion-button
+          color="primary"
+          round (click)="createRecipe()"> Add your recipe
+  </button>
+
+</ion-content>
+
+
